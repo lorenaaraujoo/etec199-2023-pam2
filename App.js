@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import style from './src/style'
+import React from 'react';
+import { Feather, Ionicons } from '@expo/vector-icons';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Teste 01!</Text>
-      <StatusBar style="auto" />
+    <View style={style.container}>
+      <LinearGradient
+      colors = {['black', 'purple']}
+      style = {style.gradientBackground}
+      >
+      <Image source= {{ uri : 'https://seeklogo.com/images/N/Nike-logo-7FB847344F-seeklogo.com.png'}} 
+      style = {style.image}
+      />
+      </LinearGradient>
+
+    {/* View para entrada de dados */}
+      <View style = {style.box}>
+        <View style = {style.viewIcons}>
+        <Feather name="user" size={24} color="black" />
+        <TextInput style = {style.input} placeholder='e-mail'/>
+        </View>
+
+        <View style = {style.viewIcons}>
+        <Ionicons name="key" size={24} color="black" />
+        <TextInput style = {style.input} placeholder='senha'/>
+        </View>
+
+        <TouchableOpacity style = {{width: '80%'}}>
+          <LinearGradient 
+            colors = {['purple', 'blue']}
+            style = {style.button}
+          >
+
+          <Text style = {style.text}>Logar</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
