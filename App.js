@@ -34,7 +34,7 @@ export default function App() {
             style = {style.button}
           >
 
-          <Text style = {style.text}>Logar</Text>
+          <Text style = {style.text}>Entrar</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
